@@ -1,0 +1,19 @@
+<div id = "form">
+<%= form_tag("/", :method => "get") do %>
+  <h1> <%= label_tag(:username, "Search for user's gists:") %> </h1> </br>
+  <%= text_field_tag(:username) %>
+  <%= submit_tag("Search") %> 
+<% end %>
+</div>
+
+</br>
+<div id = "list">
+<h2> User: <%="#{@username}" %> </h2>
+
+<% @gists.each_with_index do |gist, i| %>
+	<h2><%="#{i + 1}) Description: " + gist.description.capitalize %>	</h2>
+	<%=link_to "#{gist.html_url}", "#{gist.html_url}" %> </br>
+<%end%>
+
+</div>
+
