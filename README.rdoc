@@ -1,0 +1,4 @@
+I created a simple Rails app that integrates with Github to allow people to browse other people's public gists. 
+This was a practice app to learn how to use RSpec and Rails together.
+
+Keep in mind: This Rails app has no database.
