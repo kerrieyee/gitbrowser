@@ -2,16 +2,22 @@
 <%= form_tag("/", :method => "get") do %>
   <h1> <%= label_tag(:username, "Search for user's gists:") %> </h1> </br>
   <%= text_field_tag(:username) %>
+  <div id = "submit">
   <%= submit_tag("Search") %> 
+	</div>
 <% end %>
 </div>
 
 </br>
 <div id = "list">
-<h2> User: <%="#{@username}" %> </h2>
+<h2 id = "title"> <% if @username != nil %>
+		<%="User: #{@username}"%> 
+	<% else %>
+		<%="Top Gists From GitHub" %>
+	<%end%> </h2>
 
 <% @gists.each_with_index do |gist, i| %>
-	<h2><%="#{i + 1}) Description: " + gist.description.capitalize %>	</h2>
+	<h3><%="#{i + 1}) Description: " + gist.description.capitalize %>	</h3>
 	<%=link_to "#{gist.html_url}", "#{gist.html_url}" %> </br>
 <%end%>
 

@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+	$("a").click(function(event){
+	 confirm("Are you sure you want to leave this page?");
+	});
+});
+
+var submit = $('form').find('input[type=submit]');
+submit.hide();
+submit.after('<input type=image src=>');
